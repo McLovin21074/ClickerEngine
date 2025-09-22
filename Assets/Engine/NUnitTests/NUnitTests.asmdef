@@ -1,0 +1,9 @@
+{
+    "name": "NUnitTests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}
