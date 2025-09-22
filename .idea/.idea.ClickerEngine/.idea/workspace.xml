@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac471c96-f5d3-4548-be0d-cef5450a1f64" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/DI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/DI/DIContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/DI/DIContainer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/Engine.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/Engine.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/NUnitTests/NUnitTests.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/NUnitTests.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerEngine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerEngine/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1758523377468</updated>
       <workItem from="1758523378379" duration="3904000" />
+      <workItem from="1758557131157" duration="2311000" />
     </task>
     <servers />
   </component>
