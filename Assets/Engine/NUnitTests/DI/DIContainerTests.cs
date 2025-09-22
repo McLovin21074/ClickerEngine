@@ -1,4 +1,4 @@
-
+using System;
 using UnityEngine;
 using NUnit.Framework;
 using ClickerEngine.DI;
@@ -37,7 +37,7 @@ namespace ClickerEngineTest.DI
             Assert.IsTrue(registerTestClass is not null);
 
             container = new DIContainer();
-            var instanceRegisterTestClass = container.Resolve<RegisterTestClass>();
+            var instanceRegisterTestClass = new RegisterTestClass();
             container.RegisterInstance(instanceRegisterTestClass);
             registerTestClass = container.Resolve<RegisterTestClass>();
             Assert.IsTrue(registerTestClass is not null);
@@ -301,7 +301,26 @@ namespace ClickerEngineTest.DI
             container.RegisterInstance(customService, tagCustom);
             
         }
-        
+
+        [Test]
+        public void CheckErrorWhenResolveClassWithErrorCreatedTest()
+        {
+            var container = new DIContainer();
+            var errorMassage = "error: can't create register test class don't have params";
+            container.RegisterSingleton(factory => new RegisterTestClass(true));
+            LogAssert.Expect(LogType.Error, $"DI container error, when create object of type: {typeof(RegisterTestClass).Name}, error: {errorMassage}");
+            Assert.Throws<Exception>(() => container.Resolve<RegisterTestClass>());
+        }
+
+        [Test]
+        public void CheckLogWarningWhenNotFoundServiceInDIContainerTest()
+        {
+            var container = new DIContainer();
+            
+            LogAssert.Expect(LogType.Warning, "DI Container can't find type: " + typeof(RegisterTestClass));
+            var result = container.Resolve<RegisterTestClass>();
+            Assert.IsNull(result);
+        }
     }
     
     internal class RegisterTestClass
@@ -314,6 +333,12 @@ namespace ClickerEngineTest.DI
             _tagId = "";
         }
 
+        internal RegisterTestClass(bool invokeError)
+        {
+            if (invokeError)
+                throw new Exception("error: can't create register test class don't have params");
+        }
+        
         internal RegisterTestClass(string tagId)
         {
             _tagId = tagId;
