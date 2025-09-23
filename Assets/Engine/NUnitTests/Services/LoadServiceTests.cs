@@ -63,8 +63,8 @@ namespace ClickerEngineTest.Services
             fakeView.CheckCountCalledFixedUpdate(1);
         }
 
-        [UnityTest]
-        public IEnumerator CheckErrorWhenLoadingViewButPrefabIsNullTest()
+        [Test]
+        public void CheckErrorWhenLoadingViewButPrefabIsNullTest()
         {
             var container = new DIContainer();
 
@@ -73,7 +73,6 @@ namespace ClickerEngineTest.Services
             
             LogAssert.Expect(LogType.Error, "Load service failed load view prefab is null");
             Assert.Throws<ArgumentNullException>(() => { loadService.LoadView<FakeService, FakeView>(null); }, "Failed load view prefab is null");
-            
         }
 
         [Test]
@@ -147,7 +146,7 @@ namespace ClickerEngineTest.Services
         //TODO: make test when prefab create in LoadView without called LoadPrefabView()
     }
     
-    internal class FakeView : MonoBehaviour, IView
+        internal class FakeView : MonoBehaviour, IView
     {
         private int _countCalledFixedUpdate;
         private IService _service;
@@ -179,7 +178,7 @@ namespace ClickerEngineTest.Services
         }
     }
 
-    internal class FakeService : IService
+    public class FakeService : IService
     {
         private string _tagId;
 
@@ -192,7 +191,7 @@ namespace ClickerEngineTest.Services
         {
             Assert.That(_tagId, Is.EqualTo(tag));
         }
-        
+
     }
 
     internal class FakeOtherService : IService
@@ -200,3 +199,4 @@ namespace ClickerEngineTest.Services
         
     }
 }
+

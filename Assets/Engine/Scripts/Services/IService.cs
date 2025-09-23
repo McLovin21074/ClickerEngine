@@ -1,9 +1,6 @@
-using UnityEngine;
-
 namespace ClickerEngine
 {
-    public class IService
+    public interface IService
     {
-    
     }
 }
