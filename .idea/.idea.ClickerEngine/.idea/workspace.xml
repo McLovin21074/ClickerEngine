@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac471c96-f5d3-4548-be0d-cef5450a1f64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/Extension.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/Extension/ObservableSubscribeExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/Extension/ObservableSubscribeExtension.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IBinding.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IBinding.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IObservable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IObservable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IReactiveProperty.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IReactiveProperty.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/ReactiveProperty.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/ReactiveProperty.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/ReactiveSubscription.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/ReactiveSubscription.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerEngine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerEngine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Engine/NUnitTests/NUnitTests.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/NUnitTests.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Reactive/ReactivePropertyTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Reactive/ReactivePropertyTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/Extension/ObservableSubscribeExtension.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -23,20 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/Reactive",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/Reactive&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="E:\ProgramFiles\Unity\Hub\Editor\6000.1.15f1\Editor\Unity.exe" />

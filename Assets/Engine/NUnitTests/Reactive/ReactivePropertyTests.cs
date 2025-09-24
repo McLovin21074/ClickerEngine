@@ -1,5 +1,7 @@
-using System;
+
 using NUnit.Framework;
+using ClickerEngine.Reactive;
+using ClickerEngine.Reactive.Extension;
 
 namespace ClickerEngineTest.Reactive
 {
@@ -33,7 +35,7 @@ namespace ClickerEngineTest.Reactive
         public void CheckHaveGenericParamsInReactivePropertyTest()
         {
             var classInfo = typeof(ReactiveProperty<>);
-            Assert.That(classInfo.GetGenericArguments().Length, Is.GreaterThan(1));
+            Assert.That(classInfo.GetGenericArguments().Length, Is.GreaterThan(0));
         }
 
         [Test]
@@ -87,8 +89,8 @@ namespace ClickerEngineTest.Reactive
         public void CheckSubscribeActionValueTest()
         {
             
-            var value = new ReactivePoperty<float>(65);
-            var resultValue = 0;
+            var value = new ReactiveProperty<float>(65);
+            var resultValue = 0.0f;
             var binding = value.Subscribe(newValue => { resultValue = newValue; });
             value.Value = 45;
             Assert.That(resultValue, Is.EqualTo(45));
@@ -104,21 +106,55 @@ namespace ClickerEngineTest.Reactive
             
             Assert.That(value.ToString(), Is.EqualTo("12"));
         }
-        
+
+        [Test]
+        public void CheckNotifyWithOldValueReactivePropertyTest()
+        {
+            var value = new ReactiveProperty<int>(55);
+            var fakeObserver = new FakeObserver<int>();
+            var binding = value.Subscribe(fakeObserver);
+            value.Value = 10;
+            fakeObserver.CheckOldValue(55);
+            binding.Dispose();
+        }
+
+        [Test]
+        public void CheckSubscribeActionWithOldValueTest()
+        {
+            var value = new ReactiveProperty<int>(88);
+            var resultOldValue = 0;
+            var resultNewValue = 0;
+            var binding = value.Subscribe((oldValue, newValue) => { resultOldValue = oldValue; resultNewValue = newValue; });
+            value.Value = 32;
+            Assert.That(resultOldValue, Is.EqualTo(88));
+            Assert.That(resultNewValue, Is.EqualTo(32));
+            binding.Dispose();
+        }
     }
 
     internal class FakeObserver<T> : IObserver<T>
     {
         private T _value;
-
-        public void Handle(T newValue)
+        private T _oldValue;
+        public void NotifyObservableChanged(T oldValue, T newValue)
         {
+            _oldValue = oldValue;
             _value = newValue;
         }
-        
-        internal void CheckChangedValue(T actualValue)
+
+        public void Dispose()
         {
-            Assert.That(_value, Is.EqualTo(actualValue));
+            
+        }
+        
+        internal void CheckChangedValue(T actualResult)
+        {
+            Assert.That(_value, Is.EqualTo(actualResult));
+        }
+
+        internal void CheckOldValue(T actualResult)
+        {
+            Assert.That(_oldValue, Is.EqualTo(actualResult));
         }
         
     }
