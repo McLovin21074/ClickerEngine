@@ -1,14 +1,12 @@
 {
     "name": "NUnitTests",
-    "rootNamespace": "",
+    "rootNamespace": "ClickerEngineTest",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "Engine"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,

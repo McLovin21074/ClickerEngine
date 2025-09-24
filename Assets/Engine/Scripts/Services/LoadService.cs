@@ -1,13 +1,13 @@
 using System;
-using ClickerEngine.DI;
 using UnityEngine;
+using ClickerEngine.DI;
 
-namespace ClickerEngine
+namespace ClickerEngine.Services
 {
     public class LoadService
     {
         private readonly DIContainer _container;
-
+        
         public LoadService(DIContainer container)
         {
             _container = container;

@@ -1,4 +1,4 @@
-namespace ClickerEngine
+namespace ClickerEngine.Services
 {
     public interface IService
     {

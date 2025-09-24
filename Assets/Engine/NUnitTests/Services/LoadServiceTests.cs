@@ -6,6 +6,8 @@ using NUnit.Framework;
 using ClickerEngine.DI;
 using System.Collections;
 using UnityEngine.TestTools;
+using ClickerEngine.Services;
+using ClickerEngineTest.PrefabFakeTest;
 
 namespace ClickerEngineTest.Services
 {
@@ -16,7 +18,8 @@ namespace ClickerEngineTest.Services
         {
             var container = new DIContainer();
             var loadService = new LoadService(container);
-            var prefabPath = "";
+            var prefabPath = "NUnitTests/FakeView";
+            
             var prefab = loadService.LoadPrefabView<FakeView>(prefabPath);
 
             Assert.IsNotNull(prefab);
@@ -45,7 +48,7 @@ namespace ClickerEngineTest.Services
         [UnityTest]
         public IEnumerator CheckLoadingPrefabInSceneTest()
         {
-            var prefabPath = "";
+            var prefabPath = "NUnitTests/FakeView";
 
             var container = new DIContainer();
             
@@ -94,7 +97,7 @@ namespace ClickerEngineTest.Services
         [Test]
         public void CheckBindServiceInViewWhenLoadViewTest()
         {
-            var prefabPath = "";
+            var prefabPath = "NUnitTests/FakeView";
             var container = new DIContainer();
             container.RegisterSingleton(factory => new FakeService());
 
@@ -111,7 +114,7 @@ namespace ClickerEngineTest.Services
         [Test]
         public void CheckBindWithOtherServiceWhenLoadViewTest()
         {
-            var prefabPath = "";
+            var prefabPath = "NUnitTests/FakeView";
             var container = new DIContainer();
             container.RegisterSingleton(factory => new FakeOtherService());
 
@@ -128,7 +131,7 @@ namespace ClickerEngineTest.Services
         [Test]
         public void CheckLoadViewWithTagTest()
         {
-            var prefabPath = "";
+            var prefabPath = "NUnitTests/FakeView";
             var tag = "customService";
             var container = new DIContainer();
             container.RegisterSingleton(factory => new FakeService(tag), tag);
@@ -144,38 +147,7 @@ namespace ClickerEngineTest.Services
         }
         
         //TODO: make test when prefab create in LoadView without called LoadPrefabView()
-    }
-    
-        internal class FakeView : MonoBehaviour, IView
-    {
-        private int _countCalledFixedUpdate;
-        private IService _service;
-        private int _countCalledBind;
-        private void FixedUpdate()
-        {
-            _countCalledFixedUpdate++;
-        }
-
-        internal void CheckCountCalledFixedUpdate(int count)
-        {
-            Assert.That(_countCalledFixedUpdate, Is.EqualTo(count));
-        }
-
-        internal void CheckCountCalledBind(int count)
-        {
-            Assert.That(_countCalledBind, Is.EqualTo(count));
-        }
-
-        internal void CheckBindingService(IService service)
-        {
-            Assert.That(_service, Is.EqualTo(service));
-        }
         
-        internal void Bind(IService service)
-        {
-            _service = service;
-            _countCalledBind++;
-        }
     }
 
     public class FakeService : IService
