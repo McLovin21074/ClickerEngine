@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac471c96-f5d3-4548-be0d-cef5450a1f64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/Extension.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/Extension/ObservableSubscribeExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/Extension/ObservableSubscribeExtension.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IBinding.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IBinding.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IObservable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IObservable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IReactiveProperty.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/IReactiveProperty.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/ReactiveProperty.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/ReactiveProperty.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/ReactiveSubscription.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Reactive/ReactiveSubscription.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Reactive/ReactiveCollectionTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Reactive/ReactiveCollectionTests.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerEngine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerEngine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/NUnitTests/NUnitTests.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/NUnitTests.asmdef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Reactive/ReactivePropertyTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Reactive/ReactivePropertyTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +106,7 @@
       <workItem from="1758523378379" duration="3904000" />
       <workItem from="1758557131157" duration="5176000" />
       <workItem from="1758631236484" duration="3799000" />
+      <workItem from="1758781958345" duration="3815000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,3 @@
-
 using NUnit.Framework;
 using ClickerEngine.Reactive;
 using ClickerEngine.Reactive.Extension;
