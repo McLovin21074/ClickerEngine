@@ -36,10 +36,10 @@ namespace ClickerEngine.Services
                 Debug.LogError("Load service failed load view prefab is null");
                 throw new ArgumentNullException(nameof(prefab), "Failed load view prefab is null");
             }
-
-            var viewInstance = UnityEngine.Object.Instantiate(prefab);
             var service = _container.Resolve<TService>(tag);
-
+            var viewInstance = UnityEngine.Object.Instantiate(prefab);
+            viewInstance.Bind(service);
+            
             if (service == null)
             {
                 Debug.LogWarning($"Load service resolved null for service type: {typeof(TService).Name} with tag: {tag}");

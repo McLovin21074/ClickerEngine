@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac471c96-f5d3-4548-be0d-cef5450a1f64" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ClickerEngine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClickerEngine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Fakes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/NUnitTests/NUnitTests.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/NUnitTests.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Services/LoadServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/NUnitTests/Services/LoadServiceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/Scripts/Engine.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Engine.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/Scripts/Services/IService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Services/IService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Engine/Scripts/Services/LoadService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/Services/LoadService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Engine/Scripts/View/IView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Engine/Scripts/View/IView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +106,7 @@
       <workItem from="1758637715243" duration="91000" />
       <workItem from="1758637882380" duration="944000" />
       <workItem from="1758694231107" duration="2375000" />
+      <workItem from="1758891512171" duration="385000" />
     </task>
     <servers />
   </component>
