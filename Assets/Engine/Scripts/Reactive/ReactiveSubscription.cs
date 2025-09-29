@@ -2,10 +2,10 @@
 {
     public class ReactiveSubscription<T> : IBinding
     {
-        private readonly ReactiveProperty<T> _reactiveProperty;
+        private readonly IReactiveProperty<T> _reactiveProperty;
         private readonly IObserver<T> _observer;
 
-        public ReactiveSubscription(ReactiveProperty<T> reactiveProperty, IObserver<T> observer)
+        public ReactiveSubscription(IReactiveProperty<T> reactiveProperty, IObserver<T> observer)
         {
             _reactiveProperty = reactiveProperty;
             _observer = observer;

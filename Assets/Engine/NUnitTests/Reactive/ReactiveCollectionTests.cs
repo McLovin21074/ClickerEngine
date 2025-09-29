@@ -1,12 +1,12 @@
-﻿using System.Linq;
+﻿using System;
 using UnityEngine;
 using NUnit.Framework;
 using System.Collections;
 using UnityEngine.TestTools;
 using ClickerEngine.Reactive;
 using System.Collections.Generic;
+using System.Linq;
 using ClickerEngine.Reactive.Extension;
-using Unity.Collections.LowLevel.Unsafe;
 
 namespace ClickerEngineTest.Reactive
 {
@@ -92,6 +92,7 @@ namespace ClickerEngineTest.Reactive
 
             var actualList = new List<float>();
             actualList.Add(33);
+            actualList.Add(56);
             actualList.Add(76);
             actualList.Add(32);
 
@@ -143,7 +144,7 @@ namespace ClickerEngineTest.Reactive
         public void CheckReactiveCollectionImplementedIEnumerableTest()
         {
             var reactiveCollectionInfo = typeof(ReactiveCollection<>);
-            Assert.IsTrue(reactiveCollectionInfo.GetInterfaces().Any(i => i.Equals(typeof(IEnumerable<>))));
+            Assert.IsTrue(typeof(IEnumerable).IsAssignableFrom(reactiveCollectionInfo));
         }
 
         [Test]
@@ -152,26 +153,35 @@ namespace ClickerEngineTest.Reactive
             var reactiveCollection = new ReactiveCollection<float>();
             var fakeObserverCollection = new FakeObserverCollection<float>();
 
-            var binding = reactiveCollection.Subscribe(fakeObserverCollection.NotifyObserverCollectionAdded,
-                fakeObserverCollection.CheckNotifyObserverRemoved,
-                fakeObserverCollection.NotifyObserverCollectionClear);
+            var binding = reactiveCollection.Subscribe(fakeObserverCollection.NotifyCollectionAdded,
+                fakeObserverCollection.NotifyCollectionRemoved,
+                fakeObserverCollection.NotifyCollectionClear);
             
             reactiveCollection.Add(12);
-            fakeObserverCollection.CheckNotifyObserverAdded(reactiveCollection, 12);
+            fakeObserverCollection.CheckNotifyObserverAdded(new List<float>(), 12);
             reactiveCollection.Add(16);
-            reactiveCollection.Remove(12);
+            
             var actualResult = new float[reactiveCollection.Count];
-            reactiveCollection.CopyTo(actualResult);
-            fakeObserverCollection.CheckNotifyObserverRemoved(reactiveCollection, 12);
+            reactiveCollection.CopyTo(actualResult, 0);
+            
+            reactiveCollection.Remove(12);
+            
+            fakeObserverCollection.CheckNotifyObserverRemoved(actualResult, 12);
+            
             reactiveCollection.Clear();
+            
             fakeObserverCollection.CheckCountCalledNotifyObserverClear(1);
+            
             binding.Dispose();
+            
             reactiveCollection.Clear();
             fakeObserverCollection.CheckCountCalledNotifyObserverClear(1);
+            
             reactiveCollection.Remove(16);
             fakeObserverCollection.CheckNotifyObserverRemoved(actualResult, 12);
+            
             reactiveCollection.Add(15);
-            fakeObserverCollection.CheckNotifyObserverAdded(actualResult, 12);
+            fakeObserverCollection.CheckNotifyObserverAdded(actualResult, 16);
             
         }
 
@@ -197,18 +207,18 @@ namespace ClickerEngineTest.Reactive
         private IEnumerable<T> _collection;
         private T _valueRemoved;
         
-        public void NotifyObserverCollectionClear()
+        public void NotifyCollectionClear()
         {
             _countCalledNotifyObserverClear++;
         }
 
-        public void NotifyObserverCollectionAdded(IEnumerable<T> collection, T itemAdded)
+        public void NotifyCollectionAdded(IEnumerable<T> collection, T itemAdded)
         {
             _collection = collection;
             _valueAdded = itemAdded;
         }
 
-        public void NotifyObserverCollectionRemoved(IEnumerable<T> collection, T itemRemoved)
+        public void NotifyCollectionRemoved(IEnumerable<T> collection, T itemRemoved)
         {
             _collection = collection;
             _valueRemoved = itemRemoved;
@@ -229,6 +239,11 @@ namespace ClickerEngineTest.Reactive
         internal void CheckCountCalledNotifyObserverClear(int count)
         {
             Assert.That(_countCalledNotifyObserverClear, Is.EqualTo(count));
+        }
+
+        public void Dispose()
+        {
+            
         }
     }
 }
